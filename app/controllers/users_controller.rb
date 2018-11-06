@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
     @user = User.new(first_name: user[:first_name], last_name: user[:last_name], email: user[:email])
     if @user.save
+    	log_in @user
       flash[:success] = "Bienvenue au club sandwich!"
       redirect_to @user
     else

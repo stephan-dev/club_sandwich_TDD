@@ -1,23 +1,78 @@
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-custom">
-  <div class="container-fluid d-inline-flex">
-
-    <button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="navbar-toggler-icon"></span>
-      <a class="navbar-brand justify-content-start" href="#">caca</a>
-    </button>
-
-    <!-- <a class="navbar-brand justify-cotent-start" href="#">caca<%# image_tag "logo.png", size:"50" %></a> -->
-    <%= link_to "Accueil", root_path, class: "navbar-brand justify-content-start" %>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-      <ul class="nav navbar-nav ml-auto" style="float: right">
-        <li class="nav-item"><%# link_to "balance!", new_gossip_path, class: "nav-link" %></li>
-        <li class="nav-item"><%# link_to "toutes les infos!", gossips_path, class: "nav-link" %></li>
-        <li class="nav-item">soon<%# link_to "balance!", new_gossip_path, class: "nav-link" %></li>
-        <li class="nav-item">soon<%# link_to "balance!", new_gossip_path, class: "nav-link" %></li>
-        <li class="nav-item">soon<%# link_to "balance!", new_gossip_path, class: "nav-link" %></li>
+<!-- <header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%#= link_to "Club sandwich", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%#= link_to "Club sandwich", root_path %></li>
+        <li><%#= link_to "Aide", help_path %></li>
+        <%# if logged_in? %>
+          <li><%#= link_to "Membres", '#' %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Compte <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%#= link_to "Profil", current_user %></li>
+              <li><%#= link_to "Paramètres", '#' %></li>
+              <li class="divider"></li>
+              <li>
+                <%#= link_to "Déconnexion", logout_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
+        <%# else %>
+          <li><%#= link_to "Connexion", login_path %></li>
+        <%# end %>
       </ul>
-    </div>
+    </nav>
   </div>
-</nav>
+</header> -->
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <%= link_to "Club sandwich", root_path, id: "logo" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Club sandwich <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/">Club sandwich</a>
+          </li>
+
+        <% if logged_in? %>
+          <li><%= link_to "Membres", '#', class: "nav-link" %></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Menu
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+              <%= link_to "Profil", current_user, class: "dropdown-item" %>
+              <%= link_to "Paramètres", '#', class: "dropdown-item" %>
+
+              <div class="dropdown-divider"></div>
+
+              <%= link_to "Déconnexion", logout_path, method: :delete, class: "dropdown-item" %>
+
+
+            </div>
+          </li>
+
+        <% else %>
+          <li><%= link_to "Connexion", login_path, class: "nav-link" %></li>
+        <% end %>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
