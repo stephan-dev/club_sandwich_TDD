@@ -20,11 +20,16 @@
   <body>
     <%= render partial: "layouts/header" %>
     <div class="container-fluid">
-      <br>
-      <div><%= flash[:info] %></div>
-      <div><%= session[:current_user_id]%></div>
-      <br>
+ 
+    <div class="container">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
       <%= yield %>
+ 
+      <%= debug(params) if Rails.env.development? %>
+    </div>
+
     </div>
   </body>
 </html>
