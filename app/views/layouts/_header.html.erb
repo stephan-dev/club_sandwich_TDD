@@ -42,7 +42,7 @@
             <a class="nav-link" href="/">Club sandwich <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/">Club sandwich</a>
+            <a class="nav-link" href="/users">Club sandwich secret</a>
           </li>
 
         <% if logged_in? %>
@@ -54,8 +54,8 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-              <%= link_to "Profil", current_user, class: "dropdown-item" %>
-              <%= link_to "Paramètres", '#', class: "dropdown-item" %>
+              <%= link_to "Profil 'show'", current_user, class: "dropdown-item" %>
+              <%= link_to "Club sandwich secret", users_path, class: "dropdown-item" %>
 
               <div class="dropdown-divider"></div>
 
@@ -71,8 +71,8 @@
 
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <input class="form-control mr-sm-2" type="search" placeholder="Raconte ta vie" aria-label="Rien">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rien</button>
         </form>
       </div>
     </nav>

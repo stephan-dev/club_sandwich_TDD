@@ -12,4 +12,9 @@ class ActiveSupport::TestCase
   def is_logged_in?
     !session[:user_id].nil?
   end
+
+	# def sign_in_as(user)
+	#   post sign_in_as(email: user['email'])
+	# end
+
 end

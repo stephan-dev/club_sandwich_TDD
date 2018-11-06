@@ -1,3 +1,12 @@
+<% if session[:user_id] == @user.id %>
 <br>
-<%= @user.first_name %>, <%= @user.last_name %>, <%= @user.email %>
-<br>
+<p>prénom : <%= @user.first_name %></p><br>
+
+<p>nom : <%= @user.last_name %></p><br>
+
+<p>email : <%= @user.email %></p><br>
+<br><br>
+
+<% else %>
+  <h2>Ici tu ne peux pas voir le profil des autres membres!</h2>
+<% end %>

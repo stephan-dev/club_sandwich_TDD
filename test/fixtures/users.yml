@@ -3,9 +3,14 @@
 one:
   first_name: MyString
   last_name: MyString
-  email: MyString
+  email: MyString@my.com
 
 two:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
+  first_name: clementine
+  last_name: larochefoucauld
+  email: clem@larochefoucauld.com
+
+david:
+  first_name: david
+  last_name: truc
+  email: david@truc.com

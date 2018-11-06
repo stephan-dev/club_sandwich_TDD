@@ -1,0 +1,16 @@
+
+<h1>La liste secrète de tous les membres de ton club sandwich!</h1>
+
+  <% if logged_in? %>
+	<% @user.each do |user| %>
+
+		<%= user.first_name %><br>
+		<%= user.last_name %><br>
+		<%= user.email %><br>
+		<br>
+
+	<% end %>
+
+  <% else %>
+  	<h2>Tu n'as pas accès au club sandwich...</h2>
+  <% end %>
